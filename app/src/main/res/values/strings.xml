@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Flab or Fit</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="title_settings">Settings</string>
 </resources>
