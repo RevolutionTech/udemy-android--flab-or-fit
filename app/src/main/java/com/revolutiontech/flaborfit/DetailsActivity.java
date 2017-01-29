@@ -1,13 +1,24 @@
 package com.revolutiontech.flaborfit;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity extends FlabOrFitActivity {
+
+    protected int defaultBackgroundColor = Color.parseColor("#FFFFFF");
+
+    @Override
+    protected int getActivityLayout() {
+        return R.id.mainBG;
+    }
+
+    @Override
+    protected int getDefaultBackgroundColor() {
+        return defaultBackgroundColor;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +34,13 @@ public class DetailsActivity extends AppCompatActivity {
 
         if (exerciseTitle.equalsIgnoreCase(MainActivity.EXERCISE_WEIGHTS)) {
             exerciseImg.setImageDrawable(getResources().getDrawable(R.drawable.weight, getApplicationContext().getTheme()));
-            mainBG.setBackgroundColor(Color.parseColor("#2CA5F5"));
+            defaultBackgroundColor = Color.parseColor("#2CA5F5");
         } else if (exerciseTitle.equalsIgnoreCase(MainActivity.EXERCISE_YOGA)) {
             exerciseImg.setImageDrawable(getResources().getDrawable(R.drawable.lotus, getApplicationContext().getTheme()));
-            mainBG.setBackgroundColor(Color.parseColor("#916BCD"));
+            defaultBackgroundColor = Color.parseColor("#916BCD");
         } else {
             exerciseImg.setImageDrawable(getResources().getDrawable(R.drawable.heart, getApplicationContext().getTheme()));
-            mainBG.setBackgroundColor(Color.parseColor("#52AD56"));
+            defaultBackgroundColor = Color.parseColor("#52AD56");
         }
     }
 }

@@ -14,6 +14,10 @@ public abstract class FlabOrFitActivity extends AppCompatActivity {
 
     protected abstract int getActivityLayout();
 
+    protected int getDefaultBackgroundColor() {
+        return Color.parseColor("#FFFFFF");
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -28,7 +32,7 @@ public abstract class FlabOrFitActivity extends AppCompatActivity {
         if (nightMode) {
             color = Color.parseColor("#444444");
         } else {
-            color = Color.parseColor("#FFFFFF");
+            color = getDefaultBackgroundColor();
         }
 
         LinearLayout layout = (LinearLayout)findViewById(getActivityLayout());
